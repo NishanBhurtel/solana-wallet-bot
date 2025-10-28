@@ -1,0 +1,4 @@
+python-telegram-bot==20.6
+solana
+python-dotenv
+httpx==0.23.3
