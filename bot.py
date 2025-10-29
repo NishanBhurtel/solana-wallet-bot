@@ -7,6 +7,11 @@ from solana_utils import get_balance
 # Load Telegram token
 load_dotenv()
 TOKEN = os.getenv("TELEGRAM_TOKEN")
+if not TOKEN or TOKEN.strip() == "" or TOKEN.startswith("YOUR_"):
+    raise SystemExit(
+        "Please set TELEGRAM_TOKEN in your environment or in a .env file.\n"
+        "Create a .env file with: TELEGRAM_TOKEN=<your-telegram-bot-token>"
+    )
 
 # Start command
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
